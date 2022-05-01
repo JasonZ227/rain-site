@@ -1,11 +1,6 @@
 <template>
   <div class="todo-list">
-    <ListItem
-      v-for="todo in todos"
-      :key="todo.id"
-      :todoItem="todo"
-      @changeState="todo.completed = $event.target.checked"
-    />
+    <ListItem v-for="todo in todos" :key="todo.id" :todoItem="todo" @changeState="todo.completed = $event.target.checked" />
   </div>
 </template>
 

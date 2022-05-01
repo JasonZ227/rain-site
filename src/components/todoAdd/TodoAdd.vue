@@ -1,11 +1,6 @@
 <template>
   <div class="input-add">
-    <input
-      type="text"
-      v-model="todoContent"
-      @keyup.enter="emitAddTodo"
-      :placeholder="holderText"
-    />
+    <input type="text" v-model="todoContent" @keyup.enter="emitAddTodo" :placeholder="holderText" />
     <button @click="emitAddTodo">
       <plus-outlined />
     </button>
@@ -66,6 +61,7 @@ const emitAddTodo = () => {
     font-size: 26px;
     border: none;
     cursor: pointer;
+
     &:hover {
       opacity: 0.8;
     }

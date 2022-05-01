@@ -10,14 +10,19 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "types/**/*.d.ts"
-  ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+    "types/**/*.d.ts",
+    "vite.config.ts",
+    "vite/**/*.ts"
+  ]
+  // "references": [{ "path": "./tsconfig.node.json" }]
 }

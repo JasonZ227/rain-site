@@ -8,13 +8,9 @@ export function useFilter(todos: any) {
   const filteredTodos = computed(() => {
     switch (filter.value) {
       case "done":
-        return todos.value.filter(
-          (todo: TodoParams): boolean => todo.completed
-        );
+        return todos.value.filter((todo: TodoParams): boolean => todo.completed);
       case "todo":
-        return todos.value.filter(
-          (todo: TodoParams): boolean => !todo.completed
-        );
+        return todos.value.filter((todo: TodoParams): boolean => !todo.completed);
       default:
         return todos.value;
     }

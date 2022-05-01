@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import TodoAdd from "../../components/todoadd/TodoAdd.vue";
-import TodoFilter from "../../components/todoFilter/TodoFilter.vue";
-import TodoList from "../../components/todolist/TodoList.vue";
+import TodoAdd from "@/components/todoadd/TodoAdd.vue";
+import TodoFilter from "@/components/todoFilter/TodoFilter.vue";
+import TodoList from "@/components/todolist/TodoList.vue";
 
 import { title, intro, holderText } from "./data";
-import useTodos from "../../composables/useTodos";
-import { useFilter } from "../../composables/useFilter";
+
+import { useTodos } from "@/composables/useTodos";
+import { useFilter } from "@/composables/useFilter";
 
 const { todos, addTodo } = useTodos();
 const { filter, filteredTodos, changeFilter } = useFilter(todos);
@@ -15,11 +16,7 @@ const { filter, filteredTodos, changeFilter } = useFilter(todos);
   <main>
     <div class="app-container">
       <h1>{{ title }}</h1>
-      <TodoAdd
-        :tid="todos.length"
-        :holderText="holderText"
-        @addTodo="addTodo"
-      />
+      <TodoAdd :tid="todos.length" :holderText="holderText" @addTodo="addTodo" />
       <p>{{ intro }}</p>
       <TodoFilter :selected="filter" @changeFilter="changeFilter" />
       <TodoList :todos="filteredTodos" />
@@ -29,21 +26,20 @@ const { filter, filteredTodos, changeFilter } = useFilter(todos);
 
 <style lang="scss">
 main {
+  display: inline-block;
   width: 100%;
   min-height: 100vh;
-  display: inline-block;
 
   .app-container {
+    display: flex;
+    flex-direction: column;
     margin: 100px auto;
     width: 95%;
     max-width: 500px;
     max-height: 620px;
-
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
     padding: 48px 28px;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
     background: rgb(247, 246, 251);
 
     h1 {

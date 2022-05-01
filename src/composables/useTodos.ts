@@ -1,6 +1,6 @@
 import { ref, computed } from "vue";
 
-export default function useTodos() {
+export function useTodos() {
   const todos: any = ref([]);
   const addTodo = (todo: object) => {
     todos.value.push(todo);
